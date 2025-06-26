@@ -1,17 +1,17 @@
+import pygame
+from codeJ.Menu import Menu
 
-import pygame 
 
 class Game:
     def __init__(self):
         pygame.init()
-        self.window = pygame.display.set_mode(size=(800, 480))
+        self.window = pygame.display.set_mode(size=(576, 324))
 
     
-    def run(self, ):
-       
+    def run(self):
         while True:
 
-            menu = menu(self.window)
+            menu = Menu(self.window)
             menu.run()
             pass
 
