@@ -1,6 +1,7 @@
 import pygame
 from codeJ.Menu import Menu
 from codeJ.Const import MENU_OPTION, WIN_WIDTH, WIN_HEIGHT
+from codeJ.level import Level
 
 
 class Game:
@@ -16,8 +17,9 @@ class Game:
             menu = Menu(self.window)
             menu_return = menu.run()
 
-            if menu_return == MENU_OPTION[0]:
-                pass
+            if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:
+                level = Level(self.window, 'level1', menu_return)
+                level_return = level.run()
             elif menu_return == MENU_OPTION[4]:
                pygame.quit()
                quit()
