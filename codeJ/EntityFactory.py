@@ -1,4 +1,5 @@
 from codeJ.Backgroud import Background
+from codeJ.Const import WIN_WIDTH
 
 
 class EntityFactory:
@@ -10,5 +11,6 @@ class EntityFactory:
             case '1.png':
                 list_bg = []
                 for i in range(5):
-                    list_bg.append(Background(f'1.png{i}', (0, 0)))
-                    return list_bg
+                    list_bg.append(Background(f'5', (0, 0)))
+                    list_bg.append(Background(f'5', (WIN_WIDTH, 0)))
+                return list_bg

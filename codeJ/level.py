@@ -1,6 +1,6 @@
 
 import pygame
-from codeJ import EntityFactory
+from codeJ.EntityFactory import EntityFactory
 from codeJ.Entity import Entity
 
 
@@ -16,5 +16,6 @@ class Level:
         while True:
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
+                ent.move()
             pygame.display.flip()
         pass
