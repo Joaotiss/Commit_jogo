@@ -11,3 +11,12 @@ MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P VERSUS',
                'SCORE',
                'EXIT')
+
+#E
+ENTITY_SPEED = {
+    '0': 0,
+    '1': 1,
+    '2': 1,
+    '3': 4,
+    '4': 5
+}
