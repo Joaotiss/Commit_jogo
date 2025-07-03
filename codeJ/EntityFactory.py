@@ -1,5 +1,6 @@
+from codeJ.Player import Player
 from codeJ.Backgroud import Background
-from codeJ.Const import WIN_WIDTH
+from codeJ.Const import WIN_HEIGHT, WIN_WIDTH
 
 
 class EntityFactory:
@@ -14,3 +15,7 @@ class EntityFactory:
                     list_bg.append(Background(f'{i}', (0, 0)))
                     list_bg.append(Background(f'{i}', (WIN_WIDTH, 0)))
                 return list_bg
+            case 'Player1':
+                return Player('Player1',(10, WIN_HEIGHT - 260))
+            case 'Player2':
+                return Player('Player2',(10, WIN_HEIGHT - 130))

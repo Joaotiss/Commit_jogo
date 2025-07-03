@@ -1,7 +1,7 @@
 
 import sys
 import pygame
-from codeJ.Const import COLOR_WHITE, WIN_HEIGHT
+from codeJ.Const import COLOR_WHITE, MENU_OPTION, WIN_HEIGHT
 from codeJ.EntityFactory import EntityFactory
 from codeJ.Entity import Entity
 
@@ -13,7 +13,10 @@ class Level:
         self.game_mode = game_mode
         self.entity_list :  list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('0.png'))
+        self.entity_list.append(EntityFactory.get_entity('Player1'))
         self.timeout = 20000  # timeout em milissegundos (20 segundos)
+        if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
+            self.entity_list.append(EntityFactory.get_entity('Player2'))
 
     def run(self):
         pygame.mixer_music.load('asset/813150__mikeysaints__130bpm-kick-drum.wav')
