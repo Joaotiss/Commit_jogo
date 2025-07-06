@@ -14,7 +14,7 @@ class Player(Entity):
             self.rect.left -= ENTITY_SPEED[self.name]
         if pressed_keys[PLAYER_KEY_RIGHT[self.name]] and self.rect.right < WIN_WIDTH:
             self.rect.right += ENTITY_SPEED[self.name]
-        if pressed_keys[PLAYER_KEY_UP[self.name]] and self.rect.top > 0:
+        if pressed_keys[PLAYER_KEY_UP[self.name]] and self.rect.top > 480:
             self.rect.top -= ENTITY_SPEED[self.name]
         if pressed_keys[PLAYER_KEY_DOWN[self.name]] and self.rect.bottom < WIN_HEIGHT:
             self.rect.bottom += ENTITY_SPEED[self.name]

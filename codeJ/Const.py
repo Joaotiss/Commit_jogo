@@ -1,18 +1,16 @@
 import pygame
 
 
-WIN_WIDTH = 576
-WIN_HEIGHT = 324
+WIN_WIDTH = 800
+WIN_HEIGHT = 700
 
 #C
-COLOR_ORANGE = (200, 80, 0)
+COLOR_RED = (255, 0, 0)
 COLOR_BLACK = (0, 0, 0)
 COLOR_WHITE = (255, 255, 255)
 
 #M
 MENU_OPTION = ('NEW GAME 1P',
-               'NEW GAME 2P COOPERATIVE',
-               'NEW GAME 2P VERSUS',
                'SCORE',
                'EXIT')
 

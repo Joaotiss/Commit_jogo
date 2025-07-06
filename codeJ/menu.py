@@ -2,7 +2,7 @@ from pygame import Rect, Surface
 from pygame.font import Font
 import pygame.image
 
-from codeJ.Const import COLOR_BLACK, COLOR_ORANGE, MENU_OPTION, WIN_WIDTH
+from codeJ.Const import COLOR_BLACK, COLOR_RED, MENU_OPTION, WIN_WIDTH
 
 class Menu:
     def __init__(self, window):
@@ -18,12 +18,12 @@ class Menu:
 
          while True:
              self.window.blit(source=self.surf, dest=self.rect)
-             self.menu_text( text_size=50, text='MONTAIN', text_color=COLOR_ORANGE, text_center_pos=((WIN_WIDTH // 2), 70))
-             self.menu_text( text_size=50, text='HIGHSCORE', text_color=COLOR_ORANGE, text_center_pos=((WIN_WIDTH // 2), 120))
+             self.menu_text( text_size=70, text='HIGH', text_color=COLOR_RED, text_center_pos=((WIN_WIDTH // 2), 70))
+             self.menu_text( text_size=70, text='SHOOTER', text_color=COLOR_RED, text_center_pos=((WIN_WIDTH // 2), 120))
 
              for i in range(len(MENU_OPTION)):
                  if i == menu_option:
-                   self.menu_text(text_size=20, text=MENU_OPTION[i], text_color=COLOR_ORANGE, text_center_pos=((WIN_WIDTH // 2), 200 + (i * 25)))
+                   self.menu_text(text_size=20, text=MENU_OPTION[i], text_color=COLOR_RED, text_center_pos=((WIN_WIDTH // 2), 200 + (i * 25)))
                  else:
                    self.menu_text(text_size=22, text=MENU_OPTION[i], text_color=COLOR_BLACK, text_center_pos=((WIN_WIDTH // 2), 200 + (i * 25)))
                     
