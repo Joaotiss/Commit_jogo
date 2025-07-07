@@ -1,7 +1,8 @@
 
+import random
 import sys
 import pygame
-from codeJ.Const import COLOR_WHITE, MENU_OPTION, WIN_HEIGHT
+from codeJ.Const import COLOR_WHITE, EVENT_ENEMY, MENU_OPTION, WIN_HEIGHT
 from codeJ.EntityFactory import EntityFactory
 from codeJ.Entity import Entity
 
@@ -17,6 +18,7 @@ class Level:
         self.timeout = 20000  # timeout em milissegundos (20 segundos)
         if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
             self.entity_list.append(EntityFactory.get_entity('Player2'))
+        pygame.time.set_timer(EVENT_ENEMY, 4000)  # Evento para spawn de inimigos a cada  segundos
 
     def run(self):
         pygame.mixer_music.load('asset/813150__mikeysaints__130bpm-kick-drum.wav')
@@ -32,6 +34,10 @@ class Level:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == EVENT_ENEMY:
+                    choice = random.choice(['Enemy1', 'Enemy2'])
+                    self.entity_list.append(EntityFactory.get_entity(choice))
+                    
 
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000:.1f}s', COLOR_WHITE, (10, 5))
             self.level_text(14, f'fps: {clock.get_fps() : 0f}', COLOR_WHITE, (10, WIN_HEIGHT - 35))

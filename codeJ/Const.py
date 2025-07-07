@@ -21,9 +21,12 @@ ENTITY_SPEED = {
     '2': 1,
     '3': 2,
     '4': 3,
-    'Player1': 3,
-    'Player2': 3
+    'Player1': 5,
+    'Enemy1': 2,
+    'Enemy2': 3
 }
+
+EVENT_ENEMY = pygame.USEREVENT + 1
 
 #P
 PLAYER_KEY_UP = {
